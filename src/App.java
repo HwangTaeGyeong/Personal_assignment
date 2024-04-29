@@ -1,12 +1,12 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        //배열과 카운트 선언
-        int index = 10;
-        int[] resultArray = new int[index];
+        //ArrayList 와 카운트 선언
+        ArrayList<Integer> arrayList = new ArrayList<Integer>();
         int count = 0;
 
         while (true) {
@@ -39,14 +39,12 @@ public class App {
             }
             System.out.println("result = " + result);
 
-            //배열의 인덱스가 초과할 때 첫번째 데이터 삭제 후 데이터 앞으로 이동
-            if (count >= index) {
-                for (int i = 0; i < resultArray.length - 1; i++) {
-                    resultArray[i] = resultArray[i + 1];
-                }
-                resultArray[resultArray.length - 1] = result;
+            //배열의 인덱스가 초과할 때 첫번째 데이터 삭제 후 데이터 앞으로 이동 -> arrayList로 변경
+            if (count >= 10) {
+                arrayList.remove(0);
+                arrayList.add(result);
             } else {
-                resultArray[count] = result;
+                arrayList.add(result);
                 count++;
             }
 
@@ -56,8 +54,8 @@ public class App {
                 break;
             }
         }
-        //배열에 값을 출력
-        for (int i : resultArray) {
+        //arrayList 값 출력
+        for (int i : arrayList) {
             System.out.print(i + " ");
         }
 
