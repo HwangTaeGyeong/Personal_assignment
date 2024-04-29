@@ -4,6 +4,10 @@ public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        //배열과 카운트 선언
+        int[] resultArray = new int[3];
+        int count = 0;
+
         while (true) {
             System.out.print("첫 번째 숫자를 입력하세요: ");
             int firstNumber = sc.nextInt();
@@ -33,12 +37,19 @@ public class App {
                     break;
             }
             System.out.println("result = " + result);
+            //결과값을 배열에 추가
+            resultArray[count] = result;
+            count++;
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String exit = sc.next();
             if (exit.equals("exit")) {
                 break;
             }
+        }
+        //배열에 값을 출력
+        for (int i : resultArray) {
+            System.out.print(i + " ");
         }
 
 
