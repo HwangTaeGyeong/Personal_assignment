@@ -5,7 +5,8 @@ public class App {
         Scanner sc = new Scanner(System.in);
 
         //배열과 카운트 선언
-        int[] resultArray = new int[3];
+        int index = 10;
+        int[] resultArray = new int[index];
         int count = 0;
 
         while (true) {
@@ -37,9 +38,17 @@ public class App {
                     break;
             }
             System.out.println("result = " + result);
-            //결과값을 배열에 추가
-            resultArray[count] = result;
-            count++;
+
+            //배열의 인덱스가 초과할 때 첫번째 데이터 삭제 후 데이터 앞으로 이동
+            if (count >= index) {
+                for (int i = 0; i < resultArray.length - 1; i++) {
+                    resultArray[i] = resultArray[i + 1];
+                }
+                resultArray[resultArray.length - 1] = result;
+            } else {
+                resultArray[count] = result;
+                count++;
+            }
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String exit = sc.next();
