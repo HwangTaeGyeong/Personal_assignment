@@ -11,5 +11,26 @@ public class App {
 
         System.out.print("사칙연산 기호를 입력하세요:");
         char symbol = sc.next().charAt(0);
+
+        int result = 0;
+        switch (symbol) {
+            case '+':
+                result = firstNumber + secondNumber;
+                break;
+            case '-':
+                result = firstNumber - secondNumber;
+                break;
+            case '/':
+                if (secondNumber == 0) {
+                    System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
+                    break;
+                }
+                result = firstNumber / secondNumber;
+                break;
+            case '*':
+                result = firstNumber * secondNumber;
+                break;
+        }
+        System.out.println("result = " + result);
     }
 }
