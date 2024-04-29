@@ -8,6 +8,7 @@ public class App {
         //ArrayList 와 카운트 선언
         ArrayList<Integer> arrayList = new ArrayList<Integer>();
         int count = 0;
+        String comment;
 
         while (true) {
             System.out.print("첫 번째 숫자를 입력하세요: ");
@@ -48,15 +49,21 @@ public class App {
                 count++;
             }
 
+            //arrayList 출력
+            System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
+            comment = sc.next();
+            if (comment.equals("inquiry")) {
+                for (int i : arrayList) {
+                    System.out.print(i + " ");
+                }
+                System.out.println();
+            }
+
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
-            String exit = sc.next();
-            if (exit.equals("exit")) {
+            comment = sc.next();
+            if (comment.equals("exit")) {
                 break;
             }
-        }
-        //arrayList 값 출력
-        for (int i : arrayList) {
-            System.out.print(i + " ");
         }
 
 
