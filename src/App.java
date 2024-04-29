@@ -38,7 +38,7 @@ public class App {
                     break;
             }
             System.out.println("result = " + result);
-
+          
             //배열의 인덱스가 초과할 때 첫번째 데이터 삭제 후 데이터 앞으로 이동 -> arrayList로 변경
             if (count >= 10) {
                 arrayList.remove(0);
@@ -54,6 +54,7 @@ public class App {
                 break;
             }
         }
+
         //arrayList 값 출력
         for (int i : arrayList) {
             System.out.print(i + " ");
